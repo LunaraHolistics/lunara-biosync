@@ -43,6 +43,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6">
+              {/* Lunara Logo */}
+              <div className="inline-block">
+                <img
+                  src="/manus-storage/lunara-logo_288528d1.png"
+                  alt="Lunara Logo"
+                  className="h-16 w-auto mb-4"
+                />
+              </div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 Descubra o que está
                 <span className="gradient-text block">travando sua energia</span>
@@ -83,7 +91,7 @@ export default function Home() {
             <div className="relative hidden md:block">
               <div className="relative z-10">
                 <img
-                  src="/home/ubuntu/webdev-static-assets/device-bioresonancia.jpg"
+                  src="/manus-storage/device-bioresonancia_22965cfc.jpg"
                   alt="Aparelho de Bioressonância"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
@@ -341,8 +349,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/favicon.png" alt="Lunara BioSync" className="w-6 h-6" />
-                <span className="font-bold">Lunara BioSync</span>
+                <img src="/manus-storage/lunara-logo_288528d1.png" alt="Lunara" className="h-6 w-auto" />
+                <span className="font-bold">BioSync</span>
               </div>
               <p className="text-[#CBD5E1]">Bioressonância magnética quântica + Terapias Holísticas</p>
             </div>

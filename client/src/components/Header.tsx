@@ -16,13 +16,13 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E2E8F0] shadow-sm">
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <img 
-            src="/favicon.png" 
-            alt="Lunara BioSync" 
-            className="w-8 h-8"
+            src="/manus-storage/lunara-logo_288528d1.png" 
+            alt="Lunara" 
+            className="h-8 w-auto"
           />
-          <span className="text-xl font-bold gradient-text">Lunara BioSync</span>
+          <span className="text-xl font-bold text-[#0F172A]">BioSync</span>
         </div>
 
         {/* Desktop Navigation */}
