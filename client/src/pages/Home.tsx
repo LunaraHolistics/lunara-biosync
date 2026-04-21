@@ -46,7 +46,7 @@ export default function Home() {
               {/* Lunara Logo */}
               <div className="inline-block">
                 <img
-                  src="/manus-storage/lunara-logo_288528d1.png"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/tncXTYwYAhmppHSX.png"
                   alt="Lunara Logo"
                   className="h-16 w-auto mb-4"
                 />
@@ -91,7 +91,7 @@ export default function Home() {
             <div className="relative hidden md:block">
               <div className="relative z-10">
                 <img
-                  src="/manus-storage/device-bioresonancia_22965cfc.jpg"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/ZwDuXezqnkKveScH.jpg"
                   alt="Aparelho de Bioressonância"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
@@ -349,7 +349,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/lunara-logo_288528d1.png" alt="Lunara" className="h-6 w-auto" />
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/tncXTYwYAhmppHSX.png" alt="Lunara" className="h-6 w-auto" />
                 <span className="font-bold">BioSync</span>
               </div>
               <p className="text-[#CBD5E1]">Bioressonância magnética quântica + Terapias Holísticas</p>

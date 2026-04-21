@@ -18,7 +18,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img 
-            src="/manus-storage/lunara-logo_288528d1.png" 
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/tncXTYwYAhmppHSX.png" 
             alt="Lunara" 
             className="h-8 w-auto"
           />
