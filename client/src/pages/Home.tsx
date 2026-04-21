@@ -43,13 +43,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6">
-              {/* Lunara Logo */}
-              <div className="inline-block">
-                <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/tncXTYwYAhmppHSX.png"
-                  alt="Lunara Logo"
-                  className="h-16 w-auto mb-4"
-                />
+              {/* BioSync Badge */}
+              <div className="inline-block bg-gradient-to-r from-[#2DD4BF] to-[#14B8A6] px-4 py-2 rounded-full">
+                <span className="text-sm font-semibold text-white">🔬 Tecnologia Quântica Avançada</span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 Descubra o que está
@@ -91,9 +87,9 @@ export default function Home() {
             <div className="relative hidden md:block">
               <div className="relative z-10">
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/ZwDuXezqnkKveScH.jpg"
+                  src="/assets/device-bioresonancia.jpg"
                   alt="Aparelho de Bioressonância"
-                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  className="w-full max-w-md h-auto rounded-2xl shadow-2xl mx-auto md:mx-0"
                 />
                 {/* Glow effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#2DD4BF] to-[#A855F7] rounded-2xl opacity-20 blur-2xl -z-10 animate-pulse"></div>
@@ -160,6 +156,80 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* O que é Bioressonância Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-[#F0FDFA]">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A]">O que é Bioressonância?</h2>
+              <p className="text-xl text-[#64748B]">Compreenda a tecnologia revolucionária por trás da análise BioSync</p>
+            </div>
+
+            {/* Main Content */}
+            <div className="space-y-8">
+              {/* Intro */}
+              <div className="card-glow">
+                <p className="text-lg text-[#64748B] leading-relaxed">
+                  A Bioressonância é uma avaliação inovadora que analisa as frequências e energias do seu corpo com base nos princípios da Física Quântica Bioenergética e da Medicina Tradicional Chinesa. Cada órgão do seu corpo emite uma frequência eletromagnética única, e essa tecnologia compara esses dados com padrões de equilíbrio de um organismo saudável.
+                </p>
+                <p className="text-lg text-[#64748B] leading-relaxed mt-4">
+                  Tudo isso <span className="font-semibold text-[#2DD4BF]">sem a necessidade de coletas de sangue, cabelo ou qualquer material biológico</span>. A análise é feita por meio de leitura da pele da palma da mão, de forma completamente não invasiva.
+                </p>
+              </div>
+
+              {/* O que pode avaliar */}
+              <div className="card-glow">
+                <h3 className="text-2xl font-bold mb-6 text-[#0F172A]">O que a Bioressonância pode avaliar?</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {[
+                    { title: 'Órgãos e Sistemas', desc: 'Coração, cérebro, pulmões, rins, fígado e muito mais' },
+                    { title: 'Vitaminas e Minerais', desc: 'Saiba como estão os níveis essenciais para seu bem-estar' },
+                    { title: 'Toxinas e Metais', desc: 'Identifique fatores que podem estar prejudicando sua saúde' },
+                    { title: 'Pele e Saúde Ocular', desc: 'Compreenda o estado de sua beleza e vitalidade' },
+                    { title: 'Condições Específicas', desc: 'Obesidade, sedentarismo, alergias e desequilíbrios hormonais' },
+                    { title: 'E muito mais!', desc: 'Análise completa e detalhada do seu estado de saúde' },
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white rounded-lg p-4 border border-[#E2E8F0]">
+                      <h4 className="font-semibold text-[#0F172A] mb-2">{item.title}</h4>
+                      <p className="text-sm text-[#64748B]">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Por que escolher */}
+              <div className="card-glow">
+                <h3 className="text-2xl font-bold mb-6 text-[#0F172A]">Por que escolher a Bioressonância?</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {[
+                    { icon: '⚡', title: 'Rápido', desc: 'Resultados em minutos' },
+                    { icon: '🛡️', title: 'Seguro', desc: 'Indicado para todas as idades, sem restrições' },
+                    { icon: '😊', title: 'Indolor', desc: 'Sem agulhas, sem coleta de material' },
+                    { icon: '🔍', title: 'Preventivo', desc: 'Identifique desequilíbrios antes que se tornem problemas' },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="text-4xl">{item.icon}</div>
+                      <div>
+                        <h4 className="font-bold text-[#0F172A] mb-1">{item.title}</h4>
+                        <p className="text-[#64748B]">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Como funciona */}
+              <div className="bg-gradient-to-r from-[#2DD4BF] to-[#14B8A6] rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Como funciona?</h3>
+                <p className="text-lg leading-relaxed">
+                  Durante a avaliação, um scanner especializado capta as ondas eletromagnéticas do seu corpo e as compara com padrões saudáveis. O resultado é um relatório detalhado que revela pontos fortes e áreas que podem precisar de atenção.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -349,7 +419,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/tncXTYwYAhmppHSX.png" alt="Lunara" className="h-6 w-auto" />
+                <img src="/assets/lunara-logo.png" alt="Lunara" className="h-6 w-auto" />
                 <span className="font-bold">BioSync</span>
               </div>
               <p className="text-[#CBD5E1]">Bioressonância magnética quântica + Terapias Holísticas</p>

@@ -18,11 +18,10 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img 
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663309535032/tncXTYwYAhmppHSX.png" 
-            alt="Lunara" 
-            className="h-8 w-auto"
+            src="/assets/biosync-logo.png" 
+            alt="BioSync" 
+            className="h-10 w-auto"
           />
-          <span className="text-xl font-bold text-[#0F172A]">BioSync</span>
         </div>
 
         {/* Desktop Navigation */}
