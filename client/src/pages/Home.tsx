@@ -117,7 +117,7 @@ export default function Home() {
           {/* Process Visualization */}
           <div className="mb-16">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663309535032/TFgGy5cq4MNYch3LzbTaZo/process-illustration-DuKcguH6a3ZyF2hiydR2W2.webp"
+              src="/assets/como-funciona.png"
               alt="Processo de Bioressonância"
               className="w-full h-auto rounded-2xl shadow-lg"
             />
