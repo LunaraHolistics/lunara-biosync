@@ -368,10 +368,10 @@ export default function Home() {
                   <h3 className="text-2xl font-bold mb-4 text-[#0F172A]">Celso Luiz</h3>
                   <p className="text-lg font-semibold text-[#2DD4BF] mb-4">Psicoterapeuta Holístico</p>
                   <p className="text-[#64748B] leading-relaxed mb-4">
-                    Especializado em terapias holísticas e análise energética, Celso Luiz combina décadas de experiência em bem-estar integral com a tecnologia mais avançada em bioressonância quântica.
+                    Com uma trajetória marcada por vários anos de estudos e centenas de atendimentos clínicos, meu compromisso é guiar você de volta ao seu bem-estar natural. Para isso, alio o cuidado e o acolhimento das terapias holísticas à extrema precisão da tecnologia.
                   </p>
                   <p className="text-[#64748B] leading-relaxed">
-                    Seu compromisso é oferecer análises precisas e direcionamento terapêutico personalizado para cada cliente, transformando vidas através da compreensão profunda da energia e saúde.
+                    Através da avaliação por Bioressonância Quântica e da leitura inteligente de dados do sistema BioSync, consigo entender exatamente o que o seu corpo e sua energia estão pedindo. Com essas informações em mãos, direciono as técnicas terapêuticas de forma totalmente personalizada. Meu objetivo é um só: harmonizar suas frequências, destravar o que te impede de avançar e proporcionar o equilíbrio perfeito entre corpo, mente e energia.
                   </p>
                 </div>
               </div>
