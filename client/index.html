@@ -8,9 +8,16 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Lunara BioSync - Bioressonância e Terapias Holísticas</title>
     <meta name="description" content="Descubra desequilíbrios energéticos e físicos com bioressonância e receba um plano terapêutico personalizado. Atendimento presencial em Araraquara." />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Lunara BioSync" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,6 +32,22 @@
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then(
+            (registration) => {
+              console.log('Service Worker registrado com sucesso:', registration);
+            },
+            (error) => {
+              console.log('Erro ao registrar Service Worker:', error);
+            }
+          );
+        });
+      }
+    </script>
   </body>
 
 </html>
