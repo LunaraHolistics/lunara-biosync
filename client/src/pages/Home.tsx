@@ -3,6 +3,7 @@ import { ChevronDown, Zap, Moon, Heart, Dumbbell, Users, Zap as ZapIcon, Trendin
 import Header from '@/components/Header';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import ContactForm from '@/components/ContactForm';
+import Carousel from '@/components/Carousel';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
@@ -231,6 +232,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Carrossel de Divulgação */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0F172A]">Divulgação</h2>
+            <p className="text-xl text-[#64748B] max-w-2xl mx-auto">
+              Conheça mais sobre nossos serviços e terapias
+            </p>
+          </div>
+          <Carousel />
         </div>
       </section>
 
