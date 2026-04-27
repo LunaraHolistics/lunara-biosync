@@ -42,8 +42,6 @@ export default function Carousel() {
     setIsAutoPlay(false);
   };
 
-  const getNextIndex = () => (currentIndex + 1) % images.length;
-
   if (images.length === 0) {
     return (
       <div className="w-full bg-gradient-to-r from-[#F0FDFA] to-[#E0F2FE] rounded-2xl p-8 md:p-12 text-center border-2 border-[#2DD4BF]">
@@ -55,42 +53,32 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg group">
-      {/* Container principal - tamanho otimizado */}
-      <div className="relative w-full max-w-5xl mx-auto">
-        {/* Wrapper para mostrar imagem atual + próxima com fade */}
-        {/* Mobile: h-96 (384px), Tablet: h-[500px], Desktop: h-[600px] */}
-        <div className="relative h-96 sm:h-[450px] md:h-[550px] lg:h-[650px] overflow-hidden rounded-2xl bg-black">
-          {/* Imagem atual - em primeiro plano */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <img
-              src={images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
-              className="h-full w-auto object-contain"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22300%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2216%22%3EImagem não encontrada%3C/text%3E%3C/svg%3E';
-              }}
-            />
-          </div>
-
-          {/* Próxima imagem - com fade out à direita */}
-          {images.length > 1 && (
-            <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-              <div className="relative h-full w-1/4 sm:w-1/3 flex items-center justify-center">
-                {/* Imagem seguinte com opacidade reduzida */}
-                <img
-                  src={images[getNextIndex()]}
-                  alt={`Próximo slide`}
-                  className="h-full w-auto object-contain opacity-35"
-                />
-                {/* Gradient fade out - mais suave */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-white/50 rounded-r-2xl"></div>
-              </div>
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg group bg-black">
+      {/* Container principal - preenche a tela mantendo proporções */}
+      <div className="relative w-full">
+        {/* Wrapper com aspect ratio para manter proporções da imagem */}
+        <div className="relative w-full max-w-4xl mx-auto aspect-[3/4] sm:aspect-[9/16] md:aspect-[3/4] lg:aspect-video overflow-hidden rounded-2xl">
+          {/* Imagem atual - preenche o container */}
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22300%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2216%22%3EImagem não encontrada%3C/text%3E%3C/svg%3E';
+                }}
+              />
             </div>
-          )}
+          ))}
 
           {/* Overlay gradiente suave */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none rounded-2xl"></div>
         </div>
 
         {/* Botões de navegação - aparecem ao passar mouse */}
