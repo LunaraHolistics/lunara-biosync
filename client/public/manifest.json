@@ -10,16 +10,34 @@
   "theme_color": "#0F172A",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/favicon.png",
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/apple-touch-icon.png",
@@ -30,10 +48,16 @@
   ],
   "screenshots": [
     {
-      "src": "/favicon.png",
-      "sizes": "540x720",
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "form_factor": "narrow"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ],
   "categories": ["health", "wellness"],
@@ -45,7 +69,7 @@
       "url": "/?section=contato",
       "icons": [
         {
-          "src": "/favicon.png",
+          "src": "/favicon-192.png",
           "sizes": "192x192"
         }
       ]
@@ -57,7 +81,7 @@
       "url": "https://wa.me/5516997934558",
       "icons": [
         {
-          "src": "/favicon.png",
+          "src": "/favicon-192.png",
           "sizes": "192x192"
         }
       ]
