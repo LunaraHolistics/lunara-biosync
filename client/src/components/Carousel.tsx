@@ -57,7 +57,7 @@ export default function Carousel() {
       {/* Container principal - preenche a tela mantendo proporções */}
       <div className="relative w-full">
         {/* Wrapper com aspect ratio para manter proporções da imagem */}
-        <div className="relative w-full max-w-4xl mx-auto aspect-[3/4] sm:aspect-[9/16] md:aspect-[3/4] lg:aspect-video overflow-hidden rounded-2xl">
+        <div className="relative w-full max-w-4xl mx-auto aspect-[3/4] sm:aspect-[9/16] md:aspect-[3/4] lg:aspect-[3/4] overflow-hidden rounded-2xl">
           {/* Imagem atual - preenche o container */}
           {images.map((image, index) => (
             <div
@@ -69,7 +69,7 @@ export default function Carousel() {
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22300%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2216%22%3EImagem não encontrada%3C/text%3E%3C/svg%3E';
                 }}
