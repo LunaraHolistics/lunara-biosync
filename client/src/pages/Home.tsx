@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Zap, Moon, Heart, Dumbbell, Users, Zap as ZapIcon, TrendingUp, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -17,11 +17,27 @@ import { toast } from 'sonner';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'individual' | 'business'>('individual');
+  const [isSchedulingAvailable, setIsSchedulingAvailable] = useState(false);
+
+  // Verificar se o agendamento está disponível (01/05/2026 ou depois)
+  useEffect(() => {
+    const unlockDate = new Date('2026-05-01T00:00:00').getTime();
+    const now = new Date().getTime();
+    setIsSchedulingAvailable(now >= unlockDate);
+  }, []);
 
   const handleWhatsAppClick = () => {
     const message = 'Olá! Gostaria de agendar minha análise com bioressonância BioSync.';
     const whatsappUrl = `https://wa.me/5516997934558?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+  };
+
+  const handleSchedulingClick = () => {
+    if (!isSchedulingAvailable) {
+      toast.info('Agendamento disponível a partir de 01/05/2026');
+      return;
+    }
+    handleWhatsAppClick();
   };
 
   return (
@@ -360,12 +376,22 @@ export default function Home() {
                 Para pessoas de outras cidades da região: necessário agendamento prévio para viabilizar o deslocamento.
               </p>
             </div>
-            <Button
-              onClick={handleWhatsAppClick}
-              className="btn-primary"
-            >
-              Agendar Análise em Araraquara
-            </Button>
+            <div className="relative inline-block">
+              <Button
+                onClick={handleSchedulingClick}
+                className={`btn-primary ${
+                  !isSchedulingAvailable ? 'opacity-60 cursor-not-allowed' : ''
+                }`}
+                disabled={!isSchedulingAvailable}
+              >
+                Agendar Análise em Araraquara
+              </Button>
+              {!isSchedulingAvailable && (
+                <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[#A855F7] to-[#EC4899] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg whitespace-nowrap">
+                  🔒 Em Breve
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
