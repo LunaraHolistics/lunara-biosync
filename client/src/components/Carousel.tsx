@@ -56,10 +56,11 @@ export default function Carousel() {
 
   return (
     <div className="relative w-full overflow-hidden rounded-2xl shadow-lg group">
-      {/* Container principal - reduzido 30% em altura */}
-      <div className="relative w-full max-w-4xl mx-auto">
+      {/* Container principal - tamanho otimizado */}
+      <div className="relative w-full max-w-5xl mx-auto">
         {/* Wrapper para mostrar imagem atual + próxima com fade */}
-        <div className="relative h-80 md:h-96 overflow-hidden rounded-2xl">
+        {/* Mobile: h-96 (384px), Tablet: h-[500px], Desktop: h-[600px] */}
+        <div className="relative h-96 sm:h-[450px] md:h-[550px] lg:h-[650px] overflow-hidden rounded-2xl bg-black">
           {/* Imagem atual - em primeiro plano */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img
@@ -75,21 +76,21 @@ export default function Carousel() {
           {/* Próxima imagem - com fade out à direita */}
           {images.length > 1 && (
             <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-              <div className="relative h-full w-1/3 flex items-center justify-center">
+              <div className="relative h-full w-1/4 sm:w-1/3 flex items-center justify-center">
                 {/* Imagem seguinte com opacidade reduzida */}
                 <img
                   src={images[getNextIndex()]}
                   alt={`Próximo slide`}
-                  className="h-full w-auto object-contain opacity-40"
+                  className="h-full w-auto object-contain opacity-35"
                 />
-                {/* Gradient fade out */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-white/60 rounded-r-2xl"></div>
+                {/* Gradient fade out - mais suave */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-white/50 rounded-r-2xl"></div>
               </div>
             </div>
           )}
 
           {/* Overlay gradiente suave */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none rounded-2xl"></div>
         </div>
 
         {/* Botões de navegação - aparecem ao passar mouse */}
@@ -97,32 +98,32 @@ export default function Carousel() {
           <>
             <button
               onClick={goToPrevious}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-[#0F172A] p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 shadow-lg"
+              className="absolute left-2 sm:left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-[#0F172A] p-2 sm:p-2.5 md:p-3 rounded-full transition-all opacity-0 group-hover:opacity-100 shadow-lg"
               aria-label="Imagem anterior"
             >
-              <ChevronLeft size={20} className="md:w-6 md:h-6" />
+              <ChevronLeft size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={goToNext}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-[#0F172A] p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 shadow-lg"
+              className="absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-[#0F172A] p-2 sm:p-2.5 md:p-3 rounded-full transition-all opacity-0 group-hover:opacity-100 shadow-lg"
               aria-label="Próxima imagem"
             >
-              <ChevronRight size={20} className="md:w-6 md:h-6" />
+              <ChevronRight size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
           </>
         )}
 
         {/* Indicadores de slide - pontos na parte inferior */}
         {images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          <div className="absolute bottom-3 sm:bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`transition-all ${
                   index === currentIndex
-                    ? 'bg-white w-6 md:w-8 h-2 md:h-2.5'
+                    ? 'bg-white w-6 sm:w-7 md:w-8 h-2 md:h-2.5'
                     : 'bg-white/50 hover:bg-white/75 w-2 md:w-2.5 h-2 md:h-2.5'
                 }`}
                 style={{ borderRadius: '999px' }}
@@ -134,7 +135,7 @@ export default function Carousel() {
 
         {/* Contador de slides */}
         {images.length > 1 && (
-          <div className="absolute top-3 md:top-4 right-3 md:right-4 z-10 bg-black/60 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-semibold">
+          <div className="absolute top-2 sm:top-3 md:top-4 right-2 sm:right-3 md:right-4 z-10 bg-black/60 text-white px-2 sm:px-2.5 md:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
             {currentIndex + 1} / {images.length}
           </div>
         )}
@@ -143,7 +144,7 @@ export default function Carousel() {
         {images.length > 1 && (
           <button
             onClick={() => setIsAutoPlay(!isAutoPlay)}
-            className="absolute top-3 md:top-4 left-3 md:left-4 z-10 bg-black/60 hover:bg-black/80 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-semibold transition-all"
+            className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 z-10 bg-black/60 hover:bg-black/80 text-white px-2 sm:px-2.5 md:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold transition-all"
             title={isAutoPlay ? 'Pausar autoplay' : 'Retomar autoplay'}
           >
             {isAutoPlay ? '⏸' : '▶'}
